@@ -21,6 +21,9 @@ label start:
     $ offered_help = False
     $ duck_witness = False
 
+    play music window_theme fadein 1.5 if_changed
+    play ambience window_rain fadein 1.2 if_changed
+
     scene expression Solid(ink)
     show cg arrival at on_landing
     show screen landing_status
@@ -84,6 +87,7 @@ label start:
 
     show cg earpiece at on_landing
     with dissolve
+    play sound earbud_tap
     "Из рукава Растяпы выскользнул наушник. Он ударился о дерево и покатился к краю."
     ananas "Поймал."
     ras "У тебя сегодня дежурство по потерянным вещам?"
@@ -115,6 +119,7 @@ label start:
     else:
         ananas "У батареи что-то блестит. Брелок с ромашкой твой?"
     ras "Мой. Я его купила, чтобы ключи не терялись."
+    play sound keys_jingle
     "Связка звякнула в её ладони. Растяпа убрала ключи в сумку и почему-то не встала."
     ras "Ну что, Ананас? Ты куда теперь?"
 
@@ -135,6 +140,7 @@ label ending_circus:
     "Она забрала стакан и сумку. Семён нырнул в карман."
     show cg alone at on_landing
     with dissolve
+    play sound door_downstairs
     "Ананас остался на площадке. Внизу хлопнула входная дверь."
     call finish("Чужой подъезд")
     jump start
@@ -145,15 +151,18 @@ label ending_price:
     ras "Ключи я поищу потом."
     show cg alone at on_landing
     with dissolve
+    play sound stairs_steps
     "Она спустилась быстрым шагом. На последней ступени снова надела наушник."
     call finish("Без сделки")
     jump start
 
 label ending_departure:
+    play sound stairs_steps
     "Растяпа махнула ему Семёном и пошла вниз."
     show cg alone at on_landing
     with dissolve
     "Ананас ещё немного постоял у окна. На подоконнике проступал круг от её стакана."
+    stop ambience fadeout 2.0
     "Когда он вышел во двор, дождь уже стих."
     call finish("Окно на двоих")
     jump start
@@ -166,8 +175,10 @@ label ending_kiss:
     show cg closer at on_landing
     with dissolve
     "Они наклонились друг к другу, и очки тихо стукнулись."
+    play music kiss_theme fadeout 0.6 noloop
     show cg kiss at on_landing
     with dissolve
+    play sound duck_squeak
     "Они поцеловались. Семён качнулся у неё на плече и пискнул."
     ras "Завтра возьмём два пирожных?"
     ananas "Три. Семёну за работу."

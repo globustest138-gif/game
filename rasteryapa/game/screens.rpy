@@ -36,6 +36,15 @@ style landing_bar:
     thumb_shadow None
     ysize 8
 
+screen sound_switch():
+    $ sound_label = "Звук выкл." if preferences.get_mute("music") else "Звук вкл."
+
+    textbutton sound_label:
+        text_size 22
+        text_color paper
+        text_hover_color amber
+        action Preference("all mute", "toggle")
+
 screen landing_status():
     zorder 10
 
@@ -46,18 +55,23 @@ screen landing_status():
         background Solid(ink)
 
         vbox:
-            xsize 450
+            xsize 330
             spacing 8
             text "СИМПАТИЯ  [sympathy] / [sympathy_goal]" size 22 color amber
             bar value StaticValue(sympathy, sympathy_goal) style "landing_bar"
 
-        textbutton "В меню":
+        hbox:
             xalign 1.0
             yalign 0.5
-            text_size 23
-            text_color paper
-            text_hover_color amber
-            action MainMenu(confirm=True)
+            spacing 18
+
+            use sound_switch
+
+            textbutton "В меню":
+                text_size 23
+                text_color paper
+                text_hover_color amber
+                action MainMenu(confirm=True)
 
 screen say(who, what):
     window:
@@ -108,7 +122,12 @@ screen main_menu():
         ysize 92
         padding (36, 26)
         background Solid(ink)
-        text "ИСТОРИЯ О СЛУЧАЙНОЙ ВСТРЕЧЕ" size 22 color amber
+        text "ИСТОРИЯ О СЛУЧАЙНОЙ ВСТРЕЧЕ" size 22 color amber yalign 0.5
+
+        hbox:
+            xalign 1.0
+            yalign 0.5
+            use sound_switch
 
     frame:
         xfill True
