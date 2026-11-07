@@ -1,0 +1,2 @@
+# Keep the small CG set in the initial game archive.
+- image game/images/**
