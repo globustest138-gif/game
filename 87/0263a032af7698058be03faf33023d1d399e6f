@@ -1,0 +1,35 @@
+docs/pwa_catalog.json
+  s_c7cd47eb887f19::t_2fa4e6862794ff 1
+rasteryapa/README.md
+  s_c7cd47eb887f19::t_24b1353e6e3502 22-23
+rasteryapa/game/options.rpy
+  s_dbf5e2ab562b17::t_b439e83fea11df 2,4-5,13-17
+rasteryapa/game/screens.rpy
+  s_dbf5e2ab562b17::t_1815898450e3c4 39-47,58,63,66-74,125-130
+rasteryapa/game/script.rpy
+  s_dbf5e2ab562b17::t_67de16f085f74b 24-26,90,122,143,154,160,165,178,181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "870263a032af7698058be03faf33023d1d399e6f",
+  "prompts": {},
+  "sessions": {
+    "s_c7cd47eb887f19": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1b759-03d8-7191-b4a6-de4cfaba974d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "emantusov <emantusov@mts.ru>"
+    },
+    "s_dbf5e2ab562b17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a1b759-03d8-7191-b4a6-de4cfaba974d",
+        "model": "unknown"
+      },
+      "human_author": "emantusov <emantusov@mts.ru>"
+    }
+  }
+}
