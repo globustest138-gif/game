@@ -15,6 +15,11 @@ image cg keys = "images/cg06.webp"
 image cg closer = "images/cg07.webp"
 image cg kiss = "images/cg08.webp"
 image cg alone = "images/cg09.webp"
+image cg rain = "images/rain_window.webp"
+image cg earbud detail = "images/earbud_detail.webp"
+image cg keys detail = "images/keys_detail.webp"
+image cg circus = "images/ending_circus.webp"
+image cg price = "images/ending_price.webp"
 
 label start:
     $ sympathy = 0
@@ -25,10 +30,13 @@ label start:
     play ambience window_rain fadein 1.2 if_changed
 
     scene expression Solid(ink)
-    show cg arrival at on_landing
+    show cg rain at on_landing
     show screen landing_status
     with dissolve
 
+    "По двору шёл дождь. В подъезде горела одна лампочка на два этажа."
+    show cg arrival at on_landing
+    with dissolve
     "Между третьим и вторым этажом Ананас услышал, как кто-то спорит с подоконником."
     ras "Ну и сиди там. Мне самой домой не очень-то хотелось."
     ananas "Это ты окну?"
@@ -85,10 +93,12 @@ label start:
         "Вернуть утку и оглядеть ступени.":
             ras "Посади его рядом с чаем. Он любит тепло."
 
-    show cg earpiece at on_landing
+    show cg earbud detail at on_landing
     with dissolve
     play sound earbud_tap
     "Из рукава Растяпы выскользнул наушник. Он ударился о дерево и покатился к краю."
+    show cg earpiece at on_landing
+    with dissolve
     ananas "Поймал."
     ras "У тебя сегодня дежурство по потерянным вещам?"
     if offered_help:
@@ -119,8 +129,13 @@ label start:
     else:
         ananas "У батареи что-то блестит. Брелок с ромашкой твой?"
     ras "Мой. Я его купила, чтобы ключи не терялись."
+    show cg keys detail at on_landing
+    with dissolve
     play sound keys_jingle
-    "Связка звякнула в её ладони. Растяпа убрала ключи в сумку и почему-то не встала."
+    "Ананас выудил связку из-за трубы и положил её на подоконник."
+    show cg keys at on_landing
+    with dissolve
+    "Растяпа убрала ключи в сумку и почему-то не встала."
     ras "Ну что, Ананас? Ты куда теперь?"
 
     menu:
@@ -138,7 +153,7 @@ label start:
 label ending_circus:
     ras "Довольно. Я сама разберусь."
     "Она забрала стакан и сумку. Семён нырнул в карман."
-    show cg alone at on_landing
+    show cg circus at on_landing
     with dissolve
     play sound door_downstairs
     "Ананас остался на площадке. Внизу хлопнула входная дверь."
@@ -149,7 +164,7 @@ label ending_price:
     ras "Ананас. Отдай."
     "Он разжал ладонь. Она забрала наушник и перекинула сумку через плечо."
     ras "Ключи я поищу потом."
-    show cg alone at on_landing
+    show cg price at on_landing
     with dissolve
     play sound stairs_steps
     "Она спустилась быстрым шагом. На последней ступени снова надела наушник."
