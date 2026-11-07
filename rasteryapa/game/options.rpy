@@ -1,5 +1,5 @@
 define config.name = "Растяпа. Между этажами"
-define config.version = "1.2.0"
+define config.version = "2.0.0"
 define config.save_directory = "rasteryapa-mezhdu-etazhami-1"
 define config.has_sound = True
 define config.has_music = True
